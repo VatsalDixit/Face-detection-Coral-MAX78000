@@ -62,7 +62,7 @@ def parse_wider_annotation(ann_file: str):
 def _train_aug():
     return A.Compose([
         A.RandomResizedCrop(
-            config.TEACHER_IMG_SIZE, config.TEACHER_IMG_SIZE,
+            size=(config.TEACHER_IMG_SIZE, config.TEACHER_IMG_SIZE),
             scale=(0.5, 1.0), ratio=(0.75, 1.33)),
         A.HorizontalFlip(p=0.5),
         A.ColorJitter(0.4, 0.4, 0.4, 0.1, p=0.7),
@@ -76,7 +76,7 @@ def _val_aug():
     return A.Compose([
         A.LongestMaxSize(config.TEACHER_IMG_SIZE),
         A.PadIfNeeded(
-            config.TEACHER_IMG_SIZE, config.TEACHER_IMG_SIZE,
+            min_height=config.TEACHER_IMG_SIZE, min_width=config.TEACHER_IMG_SIZE,
             border_mode=cv2.BORDER_CONSTANT, value=0),
     ], bbox_params=A.BboxParams(
         "pascal_voc", label_fields=["labels"], min_visibility=0.1))

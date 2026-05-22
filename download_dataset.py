@@ -53,7 +53,7 @@ def extract(zip_path, dest_dir, keep=False):
 
 def download_gdrive(file_id, dest_path):
     url = f"https://drive.google.com/uc?id={file_id}"
-    gdown.download(url, dest_path, quiet=False, fuzzy=True)
+    gdown.download(url, dest_path, quiet=False)
 
 
 def progress_hook(block_num, block_size, total_size):

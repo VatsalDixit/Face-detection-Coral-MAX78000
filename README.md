@@ -15,29 +15,35 @@ git clone git@github-vatsal:VatsalDixit/Face-detection-Coral-MAX78000.git
 cd Face-detection-Coral-MAX78000
 ```
 
-### 2. Create and activate a virtual environment
-
-**Linux / macOS**
-```bash
-python3 -m venv venv
-source venv/bin/activate
-```
-
-**Windows (PowerShell)**
-```powershell
-python -m venv venv
-.\venv\Scripts\Activate.ps1
-```
-
-### 3. Install dependencies
+### 2. Create and activate a conda environment
 
 ```bash
-pip install -r requirements.txt
+conda create -n vatsal_fd python=3.10 -y
+conda activate vatsal_fd
 ```
 
-> **Note:** `tensorflow` and `onnx-tf` are only needed for the export step. If you only want to train, you can skip them:
+### 3. Install PyTorch
+
+Install via pip with the CUDA 12.8 index (works on CUDA 12.8+ and 13.x drivers, required for RTX 50xx / Blackwell GPUs):
+
+```bash
+pip install torch torchvision --index-url https://download.pytorch.org/whl/cu128
+```
+
+> For older GPUs (sm_90 and below), you can use the conda channel instead:
 > ```bash
-> pip install torch torchvision albumentations opencv-python tqdm tensorboard numpy gdown
+> conda install pytorch torchvision pytorch-cuda=12.1 -c pytorch -c nvidia -y
+> ```
+
+### 4. Install remaining dependencies
+
+```bash
+pip install albumentations opencv-python tqdm tensorboard numpy gdown onnx
+```
+
+> **Note:** `tensorflow` and `onnx-tf` are only needed for the Coral export step:
+> ```bash
+> pip install tensorflow onnx-tf
 > ```
 
 ---
