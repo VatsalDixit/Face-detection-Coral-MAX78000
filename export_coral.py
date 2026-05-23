@@ -64,16 +64,16 @@ def convert_to_int8(model: StudentDetector) -> StudentDetector:
 # ── Step 2: Export ONNX ───────────────────────────────────────────────────────
 
 def export_onnx(model: StudentDetector, output_path: str):
-    """Export FP32 model to ONNX (onnx-tf works better with FP32 input)."""
+    """Export FP32 model to ONNX."""
     dummy = torch.zeros(1, 3, config.STUDENT_IMG_SIZE, config.STUDENT_IMG_SIZE)
     torch.onnx.export(
         model,
         dummy,
         output_path,
-        opset_version=11,
+        dynamo=False,
+        opset_version=17,
         input_names=["input"],
         output_names=["cls_head1", "reg_head1", "cls_head2", "reg_head2"],
-        dynamic_axes={"input": {0: "batch_size"}},
         verbose=False,
     )
     size_mb = os.path.getsize(output_path) / 1e6
@@ -83,20 +83,32 @@ def export_onnx(model: StudentDetector, output_path: str):
 # ── Step 3: ONNX → TF SavedModel ─────────────────────────────────────────────
 
 def onnx_to_tf(onnx_path: str, tf_dir: str):
-    """Convert ONNX model to TensorFlow SavedModel."""
+    """Convert ONNX model to TensorFlow SavedModel using onnx2tf."""
     try:
-        import onnx
-        from onnx_tf.backend import prepare
+        import onnx2tf
     except ImportError:
-        print("Installing onnx-tf ...")
-        os.system(f"{sys.executable} -m pip install onnx onnx-tf")
-        import onnx
-        from onnx_tf.backend import prepare
+        print("Installing onnx2tf ...")
+        os.system(f"{sys.executable} -m pip install onnx2tf sng4onnx")
+        import onnx2tf
+
+    # onnx2tf downloads a test image for a sanity-check forward pass.
+    # Patch it on the onnx2tf.onnx2tf module (where it is called by name)
+    # so the download is replaced with a local dummy array.
+    import onnx2tf.onnx2tf as _onnx2tf_mod
+    _orig_download = _onnx2tf_mod.download_test_image_data
+    _onnx2tf_mod.download_test_image_data = lambda: np.zeros(
+        (1, 3, config.STUDENT_IMG_SIZE, config.STUDENT_IMG_SIZE), dtype=np.float32)
 
     print("Converting ONNX → TF SavedModel ...")
-    onnx_model = onnx.load(onnx_path)
-    tf_rep     = prepare(onnx_model)
-    tf_rep.export_graph(tf_dir)
+    try:
+        onnx2tf.convert(
+            input_onnx_file_path=onnx_path,
+            output_folder_path=tf_dir,
+            non_verbose=True,
+        )
+    finally:
+        _onnx2tf_mod.download_test_image_data = _orig_download
+
     print(f"✅  TF SavedModel → {tf_dir}")
 
 
@@ -123,7 +135,7 @@ def make_representative_dataset(data_root: str):
                 (config.STUDENT_IMG_SIZE, config.STUDENT_IMG_SIZE),
                 interpolation=cv2.INTER_LINEAR)
             rgb = cv2.cvtColor(small, cv2.COLOR_BGR2RGB).astype(np.float32) / 255.0
-            tensor = ((rgb - MEAN_NP) / STD_NP).transpose(2, 0, 1)[np.newaxis]  # [1,3,74,74]
+            tensor = ((rgb - MEAN_NP) / STD_NP)[np.newaxis]  # [1,74,74,3] NHWC for TFLite
             yield [tensor]
 
     return generator

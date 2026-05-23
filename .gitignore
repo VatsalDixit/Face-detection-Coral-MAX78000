@@ -1,3 +1,4 @@
 data/
 models/retinaface_resnet50.pth
 runs/
+exports/face_detector_tf
