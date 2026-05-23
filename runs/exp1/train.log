@@ -1,0 +1,108 @@
+2026-05-22 22:52:23,919  INFO     Device       : cuda
+2026-05-22 22:52:23,941  INFO     GPU          : NVIDIA GeForce RTX 5060 Ti
+2026-05-22 22:52:23,941  INFO     VRAM         : 16.6 GB
+2026-05-22 22:52:23,941  INFO     Batch size   : 8
+2026-05-22 22:52:23,941  INFO     Epochs FP32  : 30
+2026-05-22 22:52:23,942  INFO     Epochs QAT   : 20
+2026-05-22 22:52:23,942  INFO     Output dir   : ./runs/exp1
+2026-05-22 22:52:23,942  INFO     Building dataloaders ...
+2026-05-22 22:53:47,864  INFO     Device       : cuda
+2026-05-22 22:53:47,881  INFO     GPU          : NVIDIA GeForce RTX 5060 Ti
+2026-05-22 22:53:47,881  INFO     VRAM         : 16.6 GB
+2026-05-22 22:53:47,881  INFO     Batch size   : 8
+2026-05-22 22:53:47,881  INFO     Epochs FP32  : 30
+2026-05-22 22:53:47,881  INFO     Epochs QAT   : 20
+2026-05-22 22:53:47,881  INFO     Output dir   : ./runs/exp1
+2026-05-22 22:53:47,881  INFO     Building dataloaders ...
+2026-05-22 22:53:48,088  INFO       Train: 12,880 images  |  Val: 3,226 images
+2026-05-22 22:53:48,088  INFO     Loading teacher (RetinaFace ResNet-50, frozen) ...
+2026-05-22 22:53:51,216  INFO       Teacher params: 34.4M
+2026-05-22 22:53:51,216  INFO     Building student ...
+2026-05-22 22:53:51,219  INFO       Student params: 137K  (~133 KB INT8)
+2026-05-22 22:58:43,525  INFO     Device       : cuda
+2026-05-22 22:58:43,546  INFO     GPU          : NVIDIA GeForce RTX 5060 Ti
+2026-05-22 22:58:43,546  INFO     VRAM         : 16.6 GB
+2026-05-22 22:58:43,546  INFO     Batch size   : 8
+2026-05-22 22:58:43,546  INFO     Epochs FP32  : 30
+2026-05-22 22:58:43,546  INFO     Epochs QAT   : 20
+2026-05-22 22:58:43,546  INFO     Output dir   : ./runs/exp1
+2026-05-22 22:58:43,547  INFO     Building dataloaders ...
+2026-05-22 22:58:43,753  INFO       Train: 12,880 images  |  Val: 3,226 images
+2026-05-22 22:58:43,753  INFO     Loading teacher (RetinaFace ResNet-50, frozen) ...
+2026-05-22 22:58:44,180  INFO       Teacher params: 34.4M
+2026-05-22 22:58:44,180  INFO     Building student ...
+2026-05-22 22:58:44,183  INFO       Student params: 137K  (~133 KB INT8)
+2026-05-22 22:58:44,217  INFO     
+=======================================================
+2026-05-22 22:58:44,217  INFO       Starting training
+2026-05-22 22:58:44,217  INFO     =======================================================
+2026-05-22 23:02:49,358  INFO     [FP32] Ep 001/50  train=2.5112 (hard=2.033 feat=0.841 soft=0.144 pos=98)  val=2.3685  lr=6.67e-04  245s  ⭐ best
+2026-05-22 23:02:49,369  INFO       ✅ Saved best checkpoint → ./runs/exp1/best.pth
+2026-05-22 23:06:53,071  INFO     [FP32] Ep 002/50  train=2.1642 (hard=1.840 feat=0.636 soft=0.016 pos=98)  val=2.2398  lr=1.00e-03  244s  ⭐ best
+2026-05-22 23:06:53,098  INFO       ✅ Saved best checkpoint → ./runs/exp1/best.pth
+2026-05-22 23:10:56,169  INFO     [FP32] Ep 003/50  train=2.1046 (hard=1.829 feat=0.540 soft=0.014 pos=98)  val=2.1945  lr=1.00e-03  243s  ⭐ best
+2026-05-22 23:10:56,195  INFO       ✅ Saved best checkpoint → ./runs/exp1/best.pth
+2026-05-22 23:14:59,254  INFO     [FP32] Ep 004/50  train=2.0613 (hard=1.820 feat=0.473 soft=0.012 pos=98)  val=2.2408  lr=9.99e-04  243s
+2026-05-22 23:19:04,082  INFO     [FP32] Ep 005/50  train=2.0310 (hard=1.804 feat=0.444 soft=0.012 pos=98)  val=2.1684  lr=9.96e-04  245s  ⭐ best
+2026-05-22 23:19:04,108  INFO       ✅ Saved best checkpoint → ./runs/exp1/best.pth
+2026-05-22 23:23:16,201  INFO     [FP32] Ep 006/50  train=2.0165 (hard=1.798 feat=0.428 soft=0.012 pos=98)  val=2.1801  lr=9.90e-04  252s
+2026-05-22 23:27:29,780  INFO     [FP32] Ep 007/50  train=2.0081 (hard=1.792 feat=0.423 soft=0.012 pos=98)  val=2.1556  lr=9.82e-04  254s  ⭐ best
+2026-05-22 23:27:29,792  INFO       ✅ Saved best checkpoint → ./runs/exp1/best.pth
+2026-05-22 23:31:42,950  INFO     [FP32] Ep 008/50  train=1.9974 (hard=1.783 feat=0.418 soft=0.013 pos=98)  val=2.1388  lr=9.72e-04  253s  ⭐ best
+2026-05-22 23:31:42,961  INFO       ✅ Saved best checkpoint → ./runs/exp1/best.pth
+2026-05-22 23:35:56,593  INFO     [FP32] Ep 009/50  train=1.9945 (hard=1.782 feat=0.415 soft=0.013 pos=98)  val=2.1368  lr=9.60e-04  254s  ⭐ best
+2026-05-22 23:35:56,603  INFO       ✅ Saved best checkpoint → ./runs/exp1/best.pth
+2026-05-22 23:40:00,558  INFO     [FP32] Ep 010/50  train=1.9837 (hard=1.773 feat=0.412 soft=0.013 pos=98)  val=2.1600  lr=9.46e-04  244s
+2026-05-22 23:44:06,363  INFO     [FP32] Ep 011/50  train=1.9798 (hard=1.769 feat=0.410 soft=0.014 pos=98)  val=2.1250  lr=9.30e-04  246s  ⭐ best
+2026-05-22 23:44:06,376  INFO       ✅ Saved best checkpoint → ./runs/exp1/best.pth
+2026-05-22 23:48:12,146  INFO     [FP32] Ep 012/50  train=1.9777 (hard=1.768 feat=0.409 soft=0.014 pos=98)  val=2.1235  lr=9.12e-04  246s  ⭐ best
+2026-05-22 23:48:12,158  INFO       ✅ Saved best checkpoint → ./runs/exp1/best.pth
+2026-05-22 23:52:17,550  INFO     [FP32] Ep 013/50  train=1.9709 (hard=1.761 feat=0.407 soft=0.014 pos=98)  val=2.1326  lr=8.92e-04  245s
+2026-05-22 23:56:22,181  INFO     [FP32] Ep 014/50  train=1.9627 (hard=1.754 feat=0.406 soft=0.015 pos=98)  val=2.1206  lr=8.71e-04  245s  ⭐ best
+2026-05-22 23:56:22,193  INFO       ✅ Saved best checkpoint → ./runs/exp1/best.pth
+2026-05-23 00:00:26,783  INFO     [FP32] Ep 015/50  train=1.9649 (hard=1.756 feat=0.405 soft=0.015 pos=98)  val=2.1392  lr=8.48e-04  245s
+2026-05-23 00:04:32,548  INFO     [FP32] Ep 016/50  train=1.9592 (hard=1.751 feat=0.405 soft=0.015 pos=98)  val=2.1078  lr=8.23e-04  246s  ⭐ best
+2026-05-23 00:04:32,558  INFO       ✅ Saved best checkpoint → ./runs/exp1/best.pth
+2026-05-23 00:08:39,704  INFO     [FP32] Ep 017/50  train=1.9524 (hard=1.745 feat=0.403 soft=0.015 pos=98)  val=2.1263  lr=7.97e-04  247s
+2026-05-23 00:12:44,701  INFO     [FP32] Ep 018/50  train=1.9505 (hard=1.743 feat=0.403 soft=0.015 pos=98)  val=2.1249  lr=7.69e-04  245s
+2026-05-23 00:16:50,126  INFO     [FP32] Ep 019/50  train=1.9414 (hard=1.734 feat=0.402 soft=0.015 pos=98)  val=2.1332  lr=7.40e-04  245s
+2026-05-23 00:20:56,892  INFO     [FP32] Ep 020/50  train=1.9459 (hard=1.739 feat=0.401 soft=0.015 pos=98)  val=2.1178  lr=7.10e-04  247s
+2026-05-23 00:25:03,118  INFO     [FP32] Ep 021/50  train=1.9401 (hard=1.733 feat=0.401 soft=0.015 pos=98)  val=2.1098  lr=6.80e-04  246s
+2026-05-23 00:29:09,166  INFO     [FP32] Ep 022/50  train=1.9378 (hard=1.731 feat=0.400 soft=0.016 pos=98)  val=2.0858  lr=6.48e-04  246s  ⭐ best
+2026-05-23 00:29:09,179  INFO       ✅ Saved best checkpoint → ./runs/exp1/best.pth
+2026-05-23 00:33:15,136  INFO     [FP32] Ep 023/50  train=1.9357 (hard=1.729 feat=0.400 soft=0.016 pos=98)  val=2.1578  lr=6.16e-04  246s
+2026-05-23 00:37:21,151  INFO     [FP32] Ep 024/50  train=1.9308 (hard=1.725 feat=0.399 soft=0.016 pos=99)  val=2.2724  lr=5.83e-04  246s
+2026-05-23 00:41:23,102  INFO     [FP32] Ep 025/50  train=1.9353 (hard=1.730 feat=0.398 soft=0.016 pos=98)  val=2.0811  lr=5.50e-04  242s  ⭐ best
+2026-05-23 00:41:23,127  INFO       ✅ Saved best checkpoint → ./runs/exp1/best.pth
+2026-05-23 00:45:23,373  INFO     [FP32] Ep 026/50  train=1.9256 (hard=1.721 feat=0.396 soft=0.016 pos=98)  val=2.0995  lr=5.17e-04  240s
+2026-05-23 00:49:23,857  INFO     [FP32] Ep 027/50  train=1.9212 (hard=1.717 feat=0.395 soft=0.016 pos=98)  val=2.2481  lr=4.83e-04  240s
+2026-05-23 00:53:24,362  INFO     [FP32] Ep 028/50  train=1.9244 (hard=1.721 feat=0.394 soft=0.017 pos=98)  val=2.1458  lr=4.50e-04  240s
+2026-05-23 00:57:24,917  INFO     [FP32] Ep 029/50  train=1.9214 (hard=1.718 feat=0.394 soft=0.016 pos=98)  val=2.0882  lr=4.17e-04  241s
+2026-05-23 01:01:25,478  INFO     [FP32] Ep 030/50  train=1.9192 (hard=1.716 feat=0.393 soft=0.016 pos=98)  val=2.1010  lr=3.84e-04  241s
+2026-05-23 01:01:25,505  INFO     
+  ─── Enabling QAT at epoch 31 ───
+2026-05-23 01:01:25,528  INFO       ✅ QAT active — INT8 weights simulated during forward pass
+2026-05-23 01:05:30,903  INFO     [QAT ] Ep 031/50  train=2.0637 (hard=1.834 feat=0.404 soft=0.069 pos=98)  val=2.1956  lr=3.52e-04  245s
+2026-05-23 01:09:36,320  INFO     [QAT ] Ep 032/50  train=2.0225 (hard=1.803 feat=0.403 soft=0.044 pos=98)  val=2.1579  lr=3.20e-04  245s
+2026-05-23 01:13:41,908  INFO     [QAT ] Ep 033/50  train=2.0138 (hard=1.797 feat=0.405 soft=0.036 pos=98)  val=2.2443  lr=2.90e-04  246s
+2026-05-23 01:17:47,596  INFO     [QAT ] Ep 034/50  train=2.0162 (hard=1.799 feat=0.407 soft=0.034 pos=98)  val=2.1635  lr=2.60e-04  246s
+2026-05-23 01:21:52,931  INFO     [QAT ] Ep 035/50  train=2.0133 (hard=1.796 feat=0.409 soft=0.032 pos=98)  val=2.1562  lr=2.31e-04  245s
+2026-05-23 01:25:58,373  INFO     [QAT ] Ep 036/50  train=2.0123 (hard=1.795 feat=0.411 soft=0.030 pos=98)  val=2.1568  lr=2.03e-04  245s
+2026-05-23 01:30:03,824  INFO     [QAT ] Ep 037/50  train=2.0151 (hard=1.797 feat=0.412 soft=0.030 pos=98)  val=2.1245  lr=1.77e-04  245s
+2026-05-23 01:34:09,452  INFO     [QAT ] Ep 038/50  train=2.0076 (hard=1.789 feat=0.413 soft=0.030 pos=98)  val=2.1220  lr=1.52e-04  246s
+2026-05-23 01:38:14,756  INFO     [QAT ] Ep 039/50  train=2.0044 (hard=1.786 feat=0.413 soft=0.029 pos=98)  val=2.1595  lr=1.29e-04  245s
+2026-05-23 01:42:20,179  INFO     [QAT ] Ep 040/50  train=2.0056 (hard=1.787 feat=0.414 soft=0.029 pos=98)  val=2.1380  lr=1.08e-04  245s
+2026-05-23 01:46:25,751  INFO     [QAT ] Ep 041/50  train=2.0019 (hard=1.783 feat=0.414 soft=0.029 pos=98)  val=2.1211  lr=8.78e-05  246s
+2026-05-23 01:50:31,136  INFO     [QAT ] Ep 042/50  train=2.0030 (hard=1.784 feat=0.414 soft=0.029 pos=98)  val=2.1416  lr=6.98e-05  245s
+2026-05-23 01:54:36,847  INFO     [QAT ] Ep 043/50  train=2.0014 (hard=1.783 feat=0.414 soft=0.028 pos=98)  val=2.1317  lr=5.37e-05  246s
+2026-05-23 01:58:42,121  INFO     [QAT ] Ep 044/50  train=2.0016 (hard=1.784 feat=0.414 soft=0.028 pos=98)  val=2.1063  lr=3.97e-05  245s
+2026-05-23 02:02:47,581  INFO     [QAT ] Ep 045/50  train=2.0028 (hard=1.784 feat=0.414 soft=0.028 pos=98)  val=2.2064  lr=2.77e-05  245s
+2026-05-23 02:06:53,025  INFO     [QAT ] Ep 046/50  train=2.0027 (hard=1.785 feat=0.414 soft=0.027 pos=98)  val=2.1184  lr=1.78e-05  245s
+2026-05-23 02:10:58,527  INFO     [QAT ] Ep 047/50  train=1.9988 (hard=1.781 feat=0.414 soft=0.028 pos=98)  val=2.1211  lr=1.00e-05  245s
+2026-05-23 02:15:03,961  INFO     [QAT ] Ep 048/50  train=1.9999 (hard=1.782 feat=0.414 soft=0.028 pos=98)  val=2.1903  lr=4.46e-06  245s
+2026-05-23 02:19:09,385  INFO     [QAT ] Ep 049/50  train=2.0037 (hard=1.786 feat=0.414 soft=0.027 pos=99)  val=2.1128  lr=1.12e-06  245s
+2026-05-23 02:23:15,137  INFO     [QAT ] Ep 050/50  train=2.0006 (hard=1.783 feat=0.414 soft=0.028 pos=98)  val=2.1650  lr=0.00e+00  246s
+2026-05-23 02:23:15,163  INFO     
+✅ Training complete — best val loss: 2.0811
+2026-05-23 02:23:15,163  INFO        Best checkpoint : ./runs/exp1/best.pth
+2026-05-23 02:23:15,163  INFO        Run export      : python export_coral.py

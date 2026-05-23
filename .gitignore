@@ -1,4 +1,5 @@
 data/
 models/retinaface_resnet50.pth
-runs/
+runs/exp1/tb 
+runs/exp1/epoch_*.pth
 exports/face_detector_tf
